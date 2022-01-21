@@ -1,0 +1,22 @@
+{
+  "name": "teammanager1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Auzz24/teamManager1.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Auzz24/teamManager1.0/issues"
+  },
+  "homepage": "https://github.com/Auzz24/teamManager1.0#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
