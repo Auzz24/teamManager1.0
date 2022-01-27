@@ -1,8 +1,9 @@
 const inquirer = require("inquirer");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
+const gerneratepage = require("./utils/gerneratepage");
 
-const employees = [];
+const employees = [newManager, newIntern, newEngineer];
 
 const questions = [
     {
@@ -199,13 +200,19 @@ start().then((answers) => {
 
     start2().then((answer) => {
         if (answer.switchEmployee == 'intern') {
-            start3();
+            start3().then((answers) => {
+                const newIntern = new Intern(answer.name, answers.id, answers.email, answers.school)
+                employees.push(newIntern)
+            }
+            );
         }
         else if (answer.switchEmployee == 'engineer') {
-            start4();
+            start4().then((answers) => {
+                const newEngineer = new Engineer(answer.name, answers.id, answers.email, answers.github)
+                employees.push(newEngineer)
+            });
         } else {
-            // start generating HTML
-
+            gerneratepage(employees)
         }
     });
 })

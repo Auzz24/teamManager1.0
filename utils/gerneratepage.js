@@ -1,12 +1,63 @@
-// create the about section
-const generateManager = managerText => {
-  if (!managerText) {
+
+const newManager = newManagerText => {
+  if (!newManagerText) {
     return '';
   }
 
   return `
-    <section class="my-3" id="manager">
+    <section class="my-3" id="employee">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Manger</h2>
+      <ul>
+            <li>
+                Name: 
+            </li>
+            <li>
+                Id: 
+            </li>
+            <li>
+                Email:
+            </li>
+            <li>
+                Office Number: 
+            </li>
+        </ul>
+    </section>
+  `;
+};
+const newIntern = internText => {
+  if (!internText) {
+    return '';
+  }
+
+  return `
+    <section class="my-3" id="employee">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Intern</h2>
+      <ul>
+            <li>
+                Name: 
+            </li>
+            <li>
+                Id: 
+            </li>
+            <li>
+                Email:
+            </li>
+            <li>
+                School: 
+            </li>
+        </ul>
+    </section>
+  `;
+};
+
+const generateEngineer = engineerText => {
+  if (!engineerText) {
+    return '';
+  }
+
+  return `
+    <section class="my-3" id="employee">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Engineer</h2>
       <ul>
             <li>
                 Name: 
