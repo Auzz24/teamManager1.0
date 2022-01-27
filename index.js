@@ -1,6 +1,8 @@
+const fs = require('fs');
 const inquirer = require("inquirer");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern")
 const gerneratepage = require("./utils/gerneratepage");
 
 const employees = [newManager, newIntern, newEngineer];
@@ -212,7 +214,8 @@ start().then((answers) => {
                 employees.push(newEngineer)
             });
         } else {
-            gerneratepage(employees)
+            const generatedHTML = gerneratepage(employees)
+            fs.writeFileSync("./Dist/index.html", generatedHTML);
         }
     });
 })
