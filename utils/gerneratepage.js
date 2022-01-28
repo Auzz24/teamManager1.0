@@ -1,37 +1,97 @@
 
-const newManger = managerArr => {   return `
+const newManager = employees => {
+  return `
 <section class="" id="employee">
 <h2>Manager</h2>
-  ${managerArr
-    .filter(({ feature }) => feature)
-    .map(({ name, id, email, officeNumber}) => {
+  ${employees
+      .map(({ name, id, email, officeNumber }) => {
+        return `
+      <div>
+        <h5>
+          Name:
+          ${name}
+        </h5>
+        <h5>
+        ID:
+        ${id}
+      </h5>
+      <h5>
+      Email:
+      ${email}
+    </h5>
+    <h5>
+    Office Number:
+    ${officeNumber}
+  </h5>
+      </div>
+      `;
+      })
+    }
+    `;
+};
+const newIntern = employees => {
+  return `
+  <section class="" id="employee">
+  <h2>Manager</h2>
+    ${employees
+      .map(({ name, id, email, school }) => {
+        return `
+        <div>
+          <h5>
+            Name:
+            ${name}
+          </h5>
+          <h5>
+          ID:
+          ${id}
+        </h5>
+        <h5>
+        Email:
+        ${email}
+      </h5>
+      <h5>
+      School:
+      ${school}
+    </h5>
+        </div>
+        `;
+      })
+    }
+      `;
+};
+
+const newEngineer = employees=> {   return `
+<section class="" id="employee">
+<h2>Manager</h2>
+  ${employees
+    .map(({ name, id, email, gitHub}) => {
       return `
       <div>
         <h5>
           Name:
-          ${name.join(', ')}
+          ${name}
         </h5>
         <h5>
         ID:
-        ${id.join(', ')}
+        ${id}
       </h5>
       <h5>
       Email:
-      ${email.join(', ')}
+      ${email}
     </h5>
     <h5>
-    Office Number:
-    ${officeNumber.join(', ')}
+    GitHub:
+    ${gitHub}
   </h5>
       </div>
       `;
     })
-    .join('')}
+    }
     `;
   };
 
 module.exports = pageData => {
-  const {newManager, newIntern, newEngineer} = Employee;
+  const { newManager, newIntern, newEngineer } = Employee;
 
   return `
   <!DOCTYPE html>
@@ -54,7 +114,7 @@ module.exports = pageData => {
     <section>
         <ul>
             <li>
-                ${newManger(employee)}
+                ${newManager(employee)}
                 ${newIntern(employee)}
                 ${newEngineer(employee)}
             </li>
