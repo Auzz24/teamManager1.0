@@ -5,7 +5,7 @@ const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern")
 const gerneratepage = require("./utils/gerneratepage");
 
-const employees = [newManager, newIntern, newEngineer];
+const employees = [];
 
 const questions = [
     {
